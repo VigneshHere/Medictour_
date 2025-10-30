@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 150 43% 19%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 43% 19%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 43% 19%;
+
+    --primary: 150 43% 19%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 44 100% 70%;
+    --secondary-foreground: 150 43% 19%;
+
+    --muted: 150 20% 95%;
+    --muted-foreground: 150 15% 45%;
+
+    --accent: 44 100% 70%;
+    --accent-foreground: 150 43% 19%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 150 20% 90%;
+    --input: 150 20% 90%;
+    --ring: 150 43% 19%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(150, 43%, 19%), hsl(150, 50%, 25%));
+    --gradient-gold: linear-gradient(135deg, hsl(44, 100%, 70%), hsl(44, 100%, 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(150, 43%, 19%) 0%, hsl(150, 50%, 25%) 50%, hsl(44, 80%, 60%) 100%);
+    
+    --shadow-soft: 0 4px 20px hsla(150, 43%, 19%, 0.1);
+    --shadow-gold: 0 4px 20px hsla(44, 100%, 70%, 0.3);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 150 43% 10%;
+    --foreground: 40 33% 98%;
+
+    --card: 150 43% 15%;
+    --card-foreground: 40 33% 98%;
+
+    --popover: 150 43% 15%;
+    --popover-foreground: 40 33% 98%;
+
+    --primary: 44 100% 70%;
+    --primary-foreground: 150 43% 19%;
+
+    --secondary: 150 43% 25%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 150 30% 20%;
+    --muted-foreground: 150 20% 70%;
+
+    --accent: 44 100% 70%;
+    --accent-foreground: 150 43% 19%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 150 30% 25%;
+    --input: 150 30% 25%;
+    --ring: 44 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-accent to-yellow-500 bg-clip-text text-transparent;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
